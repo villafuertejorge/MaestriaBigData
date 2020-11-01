@@ -1,0 +1,806 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Video introduccion a NUMPY"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'numpy.ndarray'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "arr = np.array([2,4,6,2])\n",
+    "\n",
+    "# imprime el tipo de datos\n",
+    "print(type(arr))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 1 45  5  6]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# crea Array en base a tupla\n",
+    "\n",
+    "# crea una tupla\n",
+    "mi_tupla = (1,45,5,6)\n",
+    "\n",
+    "# crea un array en base a tupla\n",
+    "arr_tupla = np.array(mi_tupla)\n",
+    "print(arr_tupla)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "dict_items([('one', 'uno'), ('two', 'dos'), ('three', 'tres')])\n",
+      "[['one' 'uno']\n",
+      " ['two' 'dos']\n",
+      " ['three' 'tres']]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#   crea array en base a dictionaty\n",
+    "# se crea diccionario, se convierte a lista (con el metodo \"items()\" ), se crea el array\n",
+    "\n",
+    "my_dict = {'one':'uno','two':'dos','three':'tres'}\n",
+    "\n",
+    "print(my_dict.items())\n",
+    "\n",
+    "lista_my_dict = list(my_dict.items())\n",
+    "\n",
+    "# en el array las claves son la columna 0 y los valores la columna 1\n",
+    "arr_dict = np.array(lista_my_dict)\n",
+    "print(arr_dict)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Dimensiones de un Array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "# arrays dimension 0\n",
+    "a = np.array(1)\n",
+    "\n",
+    "# arrays dimension 1\n",
+    "b = np.array([1,2,3])\n",
+    "\n",
+    "# arrays dimension 2 \n",
+    "c = np.array([[1,2,3],[4,5,6]])\n",
+    "\n",
+    "# arrays dimension 3 ( 3 o mayor se llaman tensores) \n",
+    "d = np.array([\n",
+    "    [\n",
+    "        [1, 2, 3], \n",
+    "        [4, 5, 6]\n",
+    "    ], \n",
+    "    [\n",
+    "        [1, 2, 3], \n",
+    "        [4, 5, 6]\n",
+    "    ]\n",
+    "])\n",
+    "\n",
+    "# array de 4 dimensiones\n",
+    "e = np.array([\n",
+    "    [\n",
+    "        [\n",
+    "            [1, 2, 3], \n",
+    "            [4, 5, 6]\n",
+    "        ], \n",
+    "        [\n",
+    "            [1, 2, 3], \n",
+    "            [4, 5, 6]\n",
+    "        ],\n",
+    "        [\n",
+    "            [1, 2, 3], \n",
+    "            [4, 5, 6]\n",
+    "        ], \n",
+    "        [\n",
+    "            [1, 2, 3], \n",
+    "            [4, 5, 6]\n",
+    "        ]\n",
+    "    ]\n",
+    "])\n",
+    "\n",
+    "# imprime las dimensiones de los arrays (funcion \"ndim\")\n",
+    "print(a.ndim)\n",
+    "print(b.ndim)\n",
+    "print(c.ndim)\n",
+    "print(d.ndim)\n",
+    "print(e.ndim)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Seleccion elementos de un array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "[1 2 3]\n",
+      "3\n",
+      "[[1 2 3]\n",
+      " [4 5 6]]\n",
+      "[1 2 3]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(b[0])\n",
+    "print(c[0])\n",
+    "print(c[0][2])\n",
+    "print(d[1])\n",
+    "print(d[1][0])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Estructura de un Array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "()\n",
+      "(3,)\n",
+      "(2, 3)\n",
+      "(2, 2, 3)\n",
+      "(1, 4, 2, 3)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# se utiliza la funcion \"shape\" ((longitud elementos dim 1, longitud elementos dim 2,..., longitud elementos dim n))\n",
+    "\n",
+    "print(a.shape)\n",
+    "print(b.shape)\n",
+    "print(c.shape)\n",
+    "print(d.shape)\n",
+    "print(e.shape)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Indexando arrays y creando slices de arrays de una dimensión"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([10,  9,  8,  7,  6,  5,  4,  3,  2,  1,  0])"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# slices es un \"sub-array\"\n",
+    "\n",
+    "# crea un array de 0 a 10 (excluye el 11)\n",
+    "my_array = np.arange(11)\n",
+    "\n",
+    "# imprime elementos del 0 al 2 (excluye 3)\n",
+    "my_array[0:3]\n",
+    "# imprime de inicio a 5 (excluye 6)\n",
+    "my_array[:6]\n",
+    "# imprime de 6 al final\n",
+    "my_array[6:]\n",
+    "# desde el inicio hasta el 9 (exluyendo), saltando posiciones de 2 en 2\n",
+    "my_array[:9:2] \n",
+    "# desde el 6 hasta el final saltando de 2 en 2\n",
+    "my_array[6::2]\n",
+    "# la posicion -2 (se cuenta desde el final)\n",
+    "my_array[-2]\n",
+    "#desde el inicio hasta la posicion -3\n",
+    "my_array[:-3] \n",
+    "#desde la posicion -3 hasta el final\n",
+    "my_array[-3:] \n",
+    "#desde fin a inicio con un salto de -1 (de final a inicio)\n",
+    "my_array[::-1] \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Manipulando dimensiones de un array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[[ 0,  1,  2,  3,  4,  5],\n",
+       "        [ 6,  7,  8,  9, 10, 11],\n",
+       "        [12, 13, 14, 15, 16, 17]],\n",
+       "\n",
+       "       [[18, 19, 20, 21, 22, 23],\n",
+       "        [24, 25, 26, 27, 28, 29],\n",
+       "        [30, 31, 32, 33, 34, 35]]])"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\n",
+    "new_array = np.arange(36).reshape(2,3,6)\n",
+    "\n",
+    "# otra forma de modificar las dimensiones mediante el metodo \"shape\"\n",
+    "# new_array.shape=(2,3,6)\n",
+    "\n",
+    "new_array\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Lo contrario de reshape, es la función ravel y flatten, es decir, eliminar todas las dimensiones y dejar un array plano"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4,\n",
+       "       5, 6])"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "new_dims = e.reshape(2,2,6)\n",
+    "\n",
+    "# aplana el array y devuelve una VISTA\n",
+    "new_dims.ravel()\n",
+    "# aplana el array y devuelve una COPIA\n",
+    "new_dims.flatten()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Stacking (apliando) de arrays\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[[ 0,  1],\n",
+       "        [ 2,  3],\n",
+       "        [ 4,  5]],\n",
+       "\n",
+       "       [[ 6,  7],\n",
+       "        [ 8,  9],\n",
+       "        [10, 11]],\n",
+       "\n",
+       "       [[12, 13],\n",
+       "        [14, 15],\n",
+       "        [16, 17]]])"
+      ]
+     },
+     "execution_count": 44,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Los arrays pueden ser apilados ( stacking ) de forma horizontal, vertical o en profundad.\n",
+    "\n",
+    "pares = np.array([\n",
+    "    [0, 2, 4],\n",
+    "    [6, 8, 10],\n",
+    "    [12, 14, 16]\n",
+    "])\n",
+    "\n",
+    "impares = np.array([\n",
+    "    [1, 3, 5],\n",
+    "    [7, 9, 11],\n",
+    "    [13, 15, 17]\n",
+    "])\n",
+    "\n",
+    "# concatena los arraya de forma horizontal\n",
+    "#np.hstack((pares, impares))\n",
+    "\n",
+    "# concatena los arraya de forma vertical\n",
+    "#np.vstack((pares, impares))\n",
+    "\n",
+    "# las dos anteriores son equivalentes a la funcion concatenate con \"axis 0/1\"\n",
+    "#np.concatenate((pares, impares), axis=1)\n",
+    "\n",
+    "# concatena los arrays elemento x elemento (posicion x posicion)\n",
+    "np.dstack((pares, impares))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Splitting (dividiendo) arrays"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 110,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[array([[ 0],\n",
+       "        [ 6],\n",
+       "        [12]]),\n",
+       " array([[ 2],\n",
+       "        [ 8],\n",
+       "        [14]]),\n",
+       " array([[ 4],\n",
+       "        [10],\n",
+       "        [16]])]"
+      ]
+     },
+     "execution_count": 110,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\n",
+    "pares = np.array([\n",
+    "    [0, 2, 4],\n",
+    "    [6, 8, 10],\n",
+    "    [12, 14, 16]\n",
+    "])\n",
+    "\n",
+    "# divide de forma horizontal\n",
+    "#np.hsplit(pares, 3)\n",
+    "\n",
+    "# divide de forma vertical\n",
+    "#np.vsplit(pares, 3)\n",
+    "\n",
+    "# divide por medio del atributo axis (0/1)\n",
+    "np.split(pares, 3, axis=1)\n",
+    "\n",
+    "# realizar la division por profundidad\n",
+    "# se debe tener como minimo 3 dimensiones\n",
+    "#big = np.arange(27).reshape(3, 3, 3)\n",
+    "#np.dsplit(big, 3)\n",
+    "\n",
+    "# Cuenta el número de elementos del array\n",
+    "#print(big.size)\n",
+    "\n",
+    "# tamano de todo el array en bytes\n",
+    "#big.nbytes\n",
+    "\n",
+    "# transpuesta del array\n",
+    "#big = np.arange(27).reshape(3, 3, 3)\n",
+    "#print(\"big=\", big)\n",
+    "#print(\"big.T=\", big.T)\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Convirtiendo arrays"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# convierte un array a lista\n",
+    "\n",
+    "big = np.arange(27).reshape(3, 3, 3)\n",
+    "lista = big.tolist()\n",
+    "\n",
+    "# modifica el tipo de los datos del array\n",
+    "big.astype(float)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Operaciones sobre arrays"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "El resultado significa que sumando las columnas del primer componente que es: [1. 0] [1, 1] [1, 0]\n",
+    "\n",
+    "Obtenemos que las filas en la columna suman 3 y en la segunda columna 1, por lo tanto [3, 1]\n",
+    "\n",
+    "En el segundo componente que es: [0, 0] [1, 0] [0, 1]\n",
+    "\n",
+    "Obtenemos que las filas de la primera columna suman 1 y de la segunda 1 también, por lo tanto [1, 1]\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[1, 0],\n",
+       "       [2, 1],\n",
+       "       [1, 1]])"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\n",
+    "# SUMA\n",
+    "e = np.array([[[1, 0], [0, 0]],\n",
+    "              [[1, 1], [1, 0]],\n",
+    "              [[1, 0], [0, 1]]]\n",
+    "            )\n",
+    "# sumo las columnas\n",
+    "#e.sum(axis = 0) \n",
+    "\n",
+    "# sumo las filas\n",
+    "e.sum(axis=1)\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* <code>**random**</code> Como función. Importa una serie de funciones para generación de números aleatorios de diferente distribución. Algunos de los diferentes valores que podemos generar son:\n",
+    "\n",
+    "* <code>**rand**</code>: Valores aleatorios.\n",
+    "* <code>**randn**</code> : Valores aleatorios siguiendo una distribución normal.\n",
+    "* <code>**randint**</code>: Valores aleatorios enteros desde menor valor a mayor.\n",
+    "* <code>**random**</code>: Valores aleatorios de tipo float entre el intervalo [0.0, 1.0].\n",
+    "* <code>**beta**</code>: Valores que siguen una distribución Beta.\n",
+    "* <code>**binomial**</code>: Valores aleatorios que siguen una distribución Binomial.\n",
+    "* <code>**gamma**</code>: Valores que siguen una distribución Gamma.\n",
+    "* <code>**round**</code>: Permite redondear a n decimales todo un array.\n",
+    "* <code>**fill**</code>: Permite rellenar un array con un valor pasado por parámetro."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. Escribe un programa que verifique si cada elemento de un array plano (vector) está presento en un segundo array."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 92,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Elemento común  0\n",
+      "Elemento común  32\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([ 0, 32])"
+      ]
+     },
+     "execution_count": 92,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "vec_1 = np.array([1, 9, 0, 32])\n",
+    "vec_2 = np.array([3, 5, 0, 16, 32])\n",
+    "\n",
+    "# solucion 1\n",
+    "for item in vec_1:\n",
+    "    if item in vec_2:\n",
+    "        print(\"Elemento común \", item)\n",
+    "    else:\n",
+    "        pass\n",
+    "    \n",
+    "# solucion 2\n",
+    "np.in1d(vec_1, vec_2)\n",
+    "\n",
+    "# solucion 3\n",
+    "np.intersect1d(vec_1, vec_2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "2. Escribe un programa que devuelva los elementos únicos de un array."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def show_unique_elements(numpy_objetct):\n",
+    "    return np.unique(numpy_objetct)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 94,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([10, 36, 50, 87, 96])"
+      ]
+     },
+     "execution_count": 94,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_array = np.array([10, 50, 87, 96, 96, 36, 36, 10, 10])\n",
+    "show_unique_elements(numpy_objetct=my_array)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "3. Escribe un programa que devuelva el percentil 70 de los elementos de un array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 95,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "72.19999999999999"
+      ]
+     },
+     "execution_count": 95,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.percentile(my_array, 70)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "4. Concatena ambos arrays y, muestra su histograma así como la posición con el valor máximo del array"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 97,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "vec_one = np.array([\n",
+    "    [0, 21, 4],\n",
+    "    [7, 9, 115],\n",
+    "    [122, 14, 16]\n",
+    "])\n",
+    "\n",
+    "vec_two = np.array([\n",
+    "    [41, 73, 5],\n",
+    "    [6, 8, 10],\n",
+    "    [13, 159, 171]\n",
+    "])\n",
+    "\n",
+    "concat_arr = np.concatenate([vec_one, vec_two])\n",
+    "\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "plt.hist(concat_arr, bins = 5)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5. Intercambia de posición las dos primeras filas de un array."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 108,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 0  1  2  3]\n",
+      " [ 4  5  6  7]\n",
+      " [ 8  9 10 11]\n",
+      " [12 13 14 15]\n",
+      " [16 17 18 19]]\n",
+      "[[0 1 2 3]\n",
+      " [4 5 6 7]]\n",
+      "[[4 5 6 7]\n",
+      " [0 1 2 3]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "A = np.arange(20).reshape(5,4)\n",
+    "\n",
+    "print(A)\n",
+    "\n",
+    "# imprime las posiciones 0 y la posicion 1\n",
+    "# ojo no es la posicion [0,1]\n",
+    "print(A[[0,1]])\n",
+    "\n",
+    "print(A[[1,0]])\n",
+    "\n",
+    "# a esto se lo puede asignar\n",
+    "A[[0,1]] = A[[1,0]]\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

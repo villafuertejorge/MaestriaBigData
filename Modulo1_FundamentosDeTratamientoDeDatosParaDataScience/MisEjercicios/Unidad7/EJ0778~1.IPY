@@ -1,0 +1,227 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Operaciones con Arrays"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Operaciones sobre la misma posicion"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "a= [1. 1. 1.]\n",
+      "a.ndim=  1\n",
+      "a.dtype=  float64\n",
+      "a.shape=  (3,)\n",
+      "a.size=  3\n",
+      "a.itemsize=  8\n"
+     ]
+    }
+   ],
+   "source": [
+    "# estas operaciones actual sobre los elementos que se encuentran en la misma posicion\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "x = np.array([10,20,30])\n",
+    "y = np.array([10,20,30])\n",
+    "\n",
+    "a = x+y\n",
+    "a = x-y\n",
+    "a = x*y\n",
+    "a = x/y\n",
+    "\n",
+    "print(\"a=\",a)\n",
+    "print(\"a.ndim= \",a.ndim)\n",
+    "print(\"a.dtype= \",a.dtype)\n",
+    "print(\"a.shape= \",a.shape)\n",
+    "print(\"a.size= \",a.size)\n",
+    "print(\"a.itemsize= \",a.itemsize)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Arrays de diferente tipo"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x= [10 20 30]\n",
+      "y= [1.  1.5 2. ]\n",
+      "a= [11.  21.5 32. ]\n",
+      "a.ndim=  1\n",
+      "a.dtype=  float64\n",
+      "a.shape=  (3,)\n",
+      "a.size=  3\n",
+      "a.itemsize=  8\n"
+     ]
+    }
+   ],
+   "source": [
+    "# para operaciones de arrays de diferente tipo, el resultado corresponde al array mas general\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "x = np.array([10,20,30])\n",
+    "y = np.linspace(1,2,3)\n",
+    "print(\"x=\",x)\n",
+    "print(\"y=\",y)\n",
+    "a = x+y\n",
+    "#a = x-y\n",
+    "#a = x*y\n",
+    "#a = x/y\n",
+    "\n",
+    "print(\"a=\",a)\n",
+    "print(\"a.ndim= \",a.ndim)\n",
+    "print(\"a.dtype= \",a.dtype)\n",
+    "print(\"a.shape= \",a.shape)\n",
+    "print(\"a.size= \",a.size)\n",
+    "print(\"a.itemsize= \",a.itemsize)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Funciones matematicas universales"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x= [ 10 -16  30]\n",
+      "a= 68\n",
+      "a.ndim=  0\n",
+      "a.dtype=  int64\n",
+      "a.shape=  ()\n",
+      "a.size=  1\n",
+      "a.itemsize=  8\n"
+     ]
+    }
+   ],
+   "source": [
+    "# estas funciones operan elemento a elemento\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "x = np.array([10,-16,30])\n",
+    "y = np.array([1,2,3])\n",
+    "print(\"x=\",x)\n",
+    "\n",
+    "a = np.abs(x)\n",
+    "a = np.sqrt(a)\n",
+    "# hace la multiplicacion matricial\n",
+    "a = np.dot(x,y)\n",
+    "\n",
+    "print(\"a=\",a)\n",
+    "print(\"a.ndim= \",a.ndim)\n",
+    "print(\"a.dtype= \",a.dtype)\n",
+    "print(\"a.shape= \",a.shape)\n",
+    "print(\"a.size= \",a.size)\n",
+    "print(\"a.itemsize= \",a.itemsize)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Argumento Axis"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x= [[ 10 -16  30]\n",
+      " [  1   2   3]]\n",
+      "a= [24  6]\n",
+      "a.ndim=  1\n",
+      "a.dtype=  int64\n",
+      "a.shape=  (2,)\n",
+      "a.size=  2\n",
+      "a.itemsize=  8\n"
+     ]
+    }
+   ],
+   "source": [
+    "# hay algunas operaciones que estan implementadas como metodos en la clase ndarray\n",
+    "# estas aplican a todos los valores del array por defecto\n",
+    "# se puede especificar a que dimension aplicar el metodo mediante el argumento \"axis\"\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "x = np.array([[10,-16,30]\n",
+    "             ,[1,2,3]])\n",
+    "\n",
+    "print(\"x=\",x)\n",
+    "\n",
+    "a = x.sum()\n",
+    "# axis = 0 suma por columnas\n",
+    "# axixs = 1 suma por filas\n",
+    "a = x.sum(axis=1)\n",
+    "\n",
+    "print(\"a=\",a)\n",
+    "print(\"a.ndim= \",a.ndim)\n",
+    "print(\"a.dtype= \",a.dtype)\n",
+    "print(\"a.shape= \",a.shape)\n",
+    "print(\"a.size= \",a.size)\n",
+    "print(\"a.itemsize= \",a.itemsize)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
