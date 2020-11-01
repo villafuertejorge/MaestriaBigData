@@ -1,0 +1,169 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Lectura de archivos CSV"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# lectura archivos CSV\n",
+    "\n",
+    "import csv\n",
+    "\n",
+    "#abre el archivo\n",
+    "archivoEjemplo = open (\"4.1.txt\")\n",
+    "\n",
+    "# se usa el objeto \"Reader\" para iterar las lineas\n",
+    "ejemploLector = csv.reader(archivoEjemplo)\n",
+    "\n",
+    "#for val in ejemploLector:\n",
+    "#    print(\"val\",str(ejemploLector.line_num),val)\n",
+    "    \n",
+    "# transforma a lista\n",
+    "ejemploDatos = list(ejemploLector)\n",
+    "\n",
+    "print (ejemploDatos)\n",
+    "print (\"len=\",len(ejemploDatos))\n",
+    "print (\"pos[0]=\",ejemploDatos[0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#escritura de csv\n",
+    "\n",
+    "archivoSalida = open (\"4.1.txt\",\"a\")\n",
+    "\n",
+    "salidaEscritor=csv.writer(archivoSalida)\n",
+    "\n",
+    "salidaEscritor.writerow([\"naranjas\",\"limones\",\"peras\",\"uvas\"])\n",
+    "\n",
+    "salidaEscritor.writerow([\"jamon\",\"chorizo\",\"queso\",\"salchichón\"])\n",
+    "\n",
+    "salidaEscritor.writerow([1,3,4,6])\n",
+    "\n",
+    "archivoSalida.close()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# escritura de csv con delimitador diferente a la comma\n",
+    "\n",
+    "import csv\n",
+    "\n",
+    "archivoSalida = open (\"Salida1.csv\", 'w')\n",
+    "\n",
+    "# delimitador de campos es tab y de lines es espacio\n",
+    "salidaEscritor = csv.writer(archivoSalida,delimiter='\\t',lineterminator='\\n\\n')\n",
+    "\n",
+    "salidaEscritor.writerow([\"naranjas\",\"limones\",\"peras\",\"uvas\"])\n",
+    "\n",
+    "salidaEscritor.writerow([\"jamon\",\"chorizo, de Salamanca\",\"queso\",\"salchichón\"])\n",
+    "\n",
+    "salidaEscritor.writerow([1,3,4,6])\n",
+    "\n",
+    "archivoSalida.close()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "csvFileName Unidad5_ejemplo_lectura_archivos_JSON.ipynb\n",
+      "csvFileName .ipynb_checkpoints\n",
+      "csvFileName datos3.xml\n",
+      "csvFileName Unidad5_ejemplo_lectura_archivos_CSV.ipynb\n",
+      "csvFileName Unidad5_ejemplo_lectura_archivos_csv_json_xml.ipynb\n",
+      "csvFileName 4.1.txt\n",
+      "csvFileName ejemplo_practico\n",
+      "csvFileName datos.xml\n",
+      "csvFileName datos2.xml\n"
+     ]
+    }
+   ],
+   "source": [
+    "#ejercicio\n",
+    "# Encontrar todos los archivos CSV del directorio actual.\n",
+    "# Leer el contenido de cada archivo.\n",
+    "# Escribir nuevamente el contenido saltándose la primera línea sobre un nuevo archivo CSV.\n",
+    "\n",
+    "import csv, os\n",
+    "\n",
+    "# metodo que cra un directorio\n",
+    "#os.mkedirs(\"\",exit_ok=true)\n",
+    "\n",
+    "# forma el path de una archivo\n",
+    "#os.path.join('folder','archivo_name')\n",
+    "\n",
+    "# recupera archivos del directorio actual\n",
+    "for csvFileName in os.listdir('.'):\n",
+    "    \n",
+    "    print('csvFileName',csvFileName)\n",
+    "    if not csvFileName.endswith('.csv'):\n",
+    "        continue\n",
+    "    \n",
+    "    archivoLectura = open(csvFileName)\n",
+    "    ejemploLector = csv.reader(archivoLectura)\n",
+    "    listaValores = []\n",
+    "    for linea in ejemploLector:\n",
+    "        \n",
+    "        if ejemploLector.line_num == 1:\n",
+    "            continue\n",
+    "        \n",
+    "        listaValores.append(linea)\n",
+    "        \n",
+    "    # cierra archivo \n",
+    "    archivoLectura.close()\n",
+    "    \n",
+    "    # escribe en el nuevo archivo\n",
+    "    archivonuevo = open (\"archivoNuevo_\"+csvFileName, 'a')\n",
+    "    salidaEscritorNuevoArchivo=csv.writer(archivonuevo)\n",
+    "    for nuevoValor in listaValores:\n",
+    "        salidaEscritorNuevoArchivo.writerow(nuevoValor)\n",
+    "        \n",
+    "    archivonuevo.close()\n",
+    "    print(listaValores)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
