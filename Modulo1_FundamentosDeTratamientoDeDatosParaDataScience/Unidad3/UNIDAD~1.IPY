@@ -1,0 +1,928 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Python Program"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## my first program\n",
+    "## Jorge Villafuerte"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello world\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Hello world\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "a=5; \n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def sum(a,b):\n",
+    "    c = a+b\n",
+    "    return c"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Respuestade sum =  range(0, 7)\n",
+      "<class 'range'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "c=int(0)\n",
+    "c=sum(5,2)\n",
+    "print(\"Respuestade sum = \" , c)\n",
+    "print(type(c))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1  +  3  =  2\n"
+     ]
+    }
+   ],
+   "source": [
+    "n1 = 1\n",
+    "\n",
+    "n2 = 3\n",
+    "\n",
+    "suma = n1 + n1\n",
+    "\n",
+    "print(n1,\" + \", n2,\" = \", suma)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']\n"
+     ]
+    }
+   ],
+   "source": [
+    "import keyword\n",
+    "print(keyword.kwlist)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "('j', 'o', 'r', 'g', 'e')\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(tuple(\"jorge\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "lista=[1,2,3,4,5]\n",
+    "print(lista[-2])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "range(0, 5)\n"
+     ]
+    }
+   ],
+   "source": [
+    "rango=range(5)\n",
+    "print(rango)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "listaInterna=[1,2,3,[4,5]]\n",
+    "print(listaInterna[3][0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 2, 3, 4]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#concatenacion de listas\n",
+    "lista_1=[1,2]\n",
+    "lista_2=[2,3,4]\n",
+    "lista_3= lista_1 + lista_2\n",
+    "print(lista_3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "#pertenencia de un elemento en la lista\n",
+    "lista_1=[1,2]\n",
+    "print(1 in lista_1)\n",
+    "print(5 in lista_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "#recorrer elementos de la lista\n",
+    "lista_1=[1,2]\n",
+    "for x in lista_1:\n",
+    "    print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 1, 2, 1, 2]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#repeticion de listas\n",
+    "lista_1=[1,2]\n",
+    "print(3*lista_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "lista_1[1,3] =  [2, 3]\n",
+      "lista_1[2,4] =  [3, [4, 5, 6]]\n",
+      "lista_1[:] =  [1, 2, 3, [4, 5, 6]]\n",
+      "lista_1[1:] =  [2, 3, [4, 5, 6]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#seleccion de selecciones\n",
+    "lista_1=[1,2,3,[4,5,6]]\n",
+    "print(\"lista_1[1,3] = \", lista_1[1:3])\n",
+    "print(\"lista_1[2,4] = \", lista_1[2:4])\n",
+    "print(\"lista_1[:] = \", lista_1[:])\n",
+    "print(\"lista_1[1:] = \", lista_1[1:])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[-3, -2, -1, 0, 1, 2]\n",
+      "-3\n",
+      "-2\n",
+      "-1\n",
+      "0\n",
+      "1\n",
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "#lista a partir de range\n",
+    "listaRange=range(-3,3)\n",
+    "print(list(listaRange)) # ver el contenido generado por un range directamente(sin el for)\n",
+    "for x in listaRange:\n",
+    "    print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 2, 3, 4]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#insercion de elementos al final de la lista\n",
+    "lista_1=[1,2]\n",
+    "lista_2=[2,3,4]\n",
+    "lista_1.extend(lista_2)\n",
+    "print(lista_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 3, 4]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#borar elemento de lista con \"remove\"\n",
+    "lista_1=[1,2,2,3,4]\n",
+    "lista_1.remove(2)\n",
+    "lista_1.remove(2)\n",
+    "print(lista_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 3]\n",
+      "son identicas=  False\n",
+      "son identicas=  True\n"
+     ]
+    }
+   ],
+   "source": [
+    "# lista equivalentes e identicas\n",
+    "lista_a= [1,2,3]\n",
+    "lista_b= [1,2,3]\n",
+    "print(lista_a[-3:])\n",
+    "print(\"son identicas= \" , lista_a is lista_b)\n",
+    "lista_a=lista_b\n",
+    "print(\"son identicas= \" , lista_a is lista_b)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n",
+      "[-1, -1]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#listas de compresion\n",
+    "lista_compresion=[i for i in range(0,10)]\n",
+    "print(lista_compresion)\n",
+    "lista_compresion=[x-y for x,y in [(1,2),(3,4)]]\n",
+    "print(lista_compresion)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{}\n",
+      "{'key1': 1, 'key2': 'jorge'}\n",
+      "2\n",
+      "True\n",
+      "dict_values([1, 'jorge'])\n",
+      "jorge\n",
+      "dict_keys(['key1', 'key2'])\n",
+      "dict_items([('key1', 1), ('key2', 'jorge')])\n",
+      "valor =  1\n",
+      "valor =  jorge\n"
+     ]
+    }
+   ],
+   "source": [
+    "#diccionarios\n",
+    "dict_1=dict() # crea diccionario vacio\n",
+    "print(dict_1)\n",
+    "dict_1[\"key1\"]=1 #asigna valores por medio de la clave\n",
+    "dict_1[\"key2\"]=\"jorge\"\n",
+    "print(dict_1)\n",
+    "\n",
+    "#metodos\n",
+    "print(len(dict_1))\n",
+    "print(\"key2\" in dict_1)\n",
+    "print(dict_1.values())\n",
+    "print(dict_1.get(\"key2\",\"valor por defecto\"))\n",
+    "print(dict_1.keys())\n",
+    "print(dict_1.items())\n",
+    "\n",
+    "#iteracion en for\n",
+    "for clave, valor in dict_1.items():\n",
+    "    print(\"valor = \", valor)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "suma=  10 1 2\n",
+      "suma=  1 2\n",
+      "lista [1, 3, 5, 2]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#funciones\n",
+    "\n",
+    "def suma(x,y):\n",
+    "    x=5\n",
+    "    y=5\n",
+    "    return x+y\n",
+    "\n",
+    "x=1\n",
+    "y=2\n",
+    "resp=suma(x,y)\n",
+    "print(\"suma= \",resp,x,y)\n",
+    "print(\"suma= \",x,y)\n",
+    "\n",
+    "\n",
+    "def fun_lista(lista):\n",
+    "    lista.append(2)\n",
+    "    return lista\n",
+    "\n",
+    "lista=[1,3,5]\n",
+    "fun_lista(lista)\n",
+    "print(\"lista\",lista)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3.141592653589793\n",
+      "b'/home/jorge/Documents/Ejemplos_pythonNotebook'\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "['CLD_CONTINUED',\n",
+       " 'CLD_DUMPED',\n",
+       " 'CLD_EXITED',\n",
+       " 'CLD_TRAPPED',\n",
+       " 'DirEntry',\n",
+       " 'EX_CANTCREAT',\n",
+       " 'EX_CONFIG',\n",
+       " 'EX_DATAERR',\n",
+       " 'EX_IOERR',\n",
+       " 'EX_NOHOST',\n",
+       " 'EX_NOINPUT',\n",
+       " 'EX_NOPERM',\n",
+       " 'EX_NOUSER',\n",
+       " 'EX_OK',\n",
+       " 'EX_OSERR',\n",
+       " 'EX_OSFILE',\n",
+       " 'EX_PROTOCOL',\n",
+       " 'EX_SOFTWARE',\n",
+       " 'EX_TEMPFAIL',\n",
+       " 'EX_UNAVAILABLE',\n",
+       " 'EX_USAGE',\n",
+       " 'F_LOCK',\n",
+       " 'F_OK',\n",
+       " 'F_TEST',\n",
+       " 'F_TLOCK',\n",
+       " 'F_ULOCK',\n",
+       " 'MutableMapping',\n",
+       " 'NGROUPS_MAX',\n",
+       " 'O_ACCMODE',\n",
+       " 'O_APPEND',\n",
+       " 'O_ASYNC',\n",
+       " 'O_CLOEXEC',\n",
+       " 'O_CREAT',\n",
+       " 'O_DIRECT',\n",
+       " 'O_DIRECTORY',\n",
+       " 'O_DSYNC',\n",
+       " 'O_EXCL',\n",
+       " 'O_LARGEFILE',\n",
+       " 'O_NDELAY',\n",
+       " 'O_NOATIME',\n",
+       " 'O_NOCTTY',\n",
+       " 'O_NOFOLLOW',\n",
+       " 'O_NONBLOCK',\n",
+       " 'O_RDONLY',\n",
+       " 'O_RDWR',\n",
+       " 'O_RSYNC',\n",
+       " 'O_SYNC',\n",
+       " 'O_TRUNC',\n",
+       " 'O_WRONLY',\n",
+       " 'POSIX_FADV_DONTNEED',\n",
+       " 'POSIX_FADV_NOREUSE',\n",
+       " 'POSIX_FADV_NORMAL',\n",
+       " 'POSIX_FADV_RANDOM',\n",
+       " 'POSIX_FADV_SEQUENTIAL',\n",
+       " 'POSIX_FADV_WILLNEED',\n",
+       " 'POSIX_SPAWN_CLOSE',\n",
+       " 'POSIX_SPAWN_DUP2',\n",
+       " 'POSIX_SPAWN_OPEN',\n",
+       " 'PRIO_PGRP',\n",
+       " 'PRIO_PROCESS',\n",
+       " 'PRIO_USER',\n",
+       " 'P_ALL',\n",
+       " 'P_NOWAIT',\n",
+       " 'P_NOWAITO',\n",
+       " 'P_PGID',\n",
+       " 'P_PID',\n",
+       " 'P_WAIT',\n",
+       " 'PathLike',\n",
+       " 'RTLD_DEEPBIND',\n",
+       " 'RTLD_GLOBAL',\n",
+       " 'RTLD_LAZY',\n",
+       " 'RTLD_LOCAL',\n",
+       " 'RTLD_NODELETE',\n",
+       " 'RTLD_NOLOAD',\n",
+       " 'RTLD_NOW',\n",
+       " 'R_OK',\n",
+       " 'SCHED_BATCH',\n",
+       " 'SCHED_FIFO',\n",
+       " 'SCHED_IDLE',\n",
+       " 'SCHED_OTHER',\n",
+       " 'SCHED_RESET_ON_FORK',\n",
+       " 'SCHED_RR',\n",
+       " 'SEEK_CUR',\n",
+       " 'SEEK_END',\n",
+       " 'SEEK_SET',\n",
+       " 'ST_APPEND',\n",
+       " 'ST_MANDLOCK',\n",
+       " 'ST_NOATIME',\n",
+       " 'ST_NODEV',\n",
+       " 'ST_NODIRATIME',\n",
+       " 'ST_NOEXEC',\n",
+       " 'ST_NOSUID',\n",
+       " 'ST_RDONLY',\n",
+       " 'ST_RELATIME',\n",
+       " 'ST_SYNCHRONOUS',\n",
+       " 'ST_WRITE',\n",
+       " 'TMP_MAX',\n",
+       " 'WCONTINUED',\n",
+       " 'WCOREDUMP',\n",
+       " 'WEXITED',\n",
+       " 'WEXITSTATUS',\n",
+       " 'WIFCONTINUED',\n",
+       " 'WIFEXITED',\n",
+       " 'WIFSIGNALED',\n",
+       " 'WIFSTOPPED',\n",
+       " 'WNOHANG',\n",
+       " 'WNOWAIT',\n",
+       " 'WSTOPPED',\n",
+       " 'WSTOPSIG',\n",
+       " 'WTERMSIG',\n",
+       " 'WUNTRACED',\n",
+       " 'W_OK',\n",
+       " 'XATTR_CREATE',\n",
+       " 'XATTR_REPLACE',\n",
+       " 'XATTR_SIZE_MAX',\n",
+       " 'X_OK',\n",
+       " '_Environ',\n",
+       " '__all__',\n",
+       " '__builtins__',\n",
+       " '__cached__',\n",
+       " '__doc__',\n",
+       " '__file__',\n",
+       " '__loader__',\n",
+       " '__name__',\n",
+       " '__package__',\n",
+       " '__spec__',\n",
+       " '_check_methods',\n",
+       " '_execvpe',\n",
+       " '_exists',\n",
+       " '_exit',\n",
+       " '_fspath',\n",
+       " '_fwalk',\n",
+       " '_get_exports_list',\n",
+       " '_putenv',\n",
+       " '_spawnvef',\n",
+       " '_unsetenv',\n",
+       " '_wrap_close',\n",
+       " 'abc',\n",
+       " 'abort',\n",
+       " 'access',\n",
+       " 'altsep',\n",
+       " 'chdir',\n",
+       " 'chmod',\n",
+       " 'chown',\n",
+       " 'chroot',\n",
+       " 'close',\n",
+       " 'closerange',\n",
+       " 'confstr',\n",
+       " 'confstr_names',\n",
+       " 'cpu_count',\n",
+       " 'ctermid',\n",
+       " 'curdir',\n",
+       " 'defpath',\n",
+       " 'device_encoding',\n",
+       " 'devnull',\n",
+       " 'dup',\n",
+       " 'dup2',\n",
+       " 'environ',\n",
+       " 'environb',\n",
+       " 'error',\n",
+       " 'execl',\n",
+       " 'execle',\n",
+       " 'execlp',\n",
+       " 'execlpe',\n",
+       " 'execv',\n",
+       " 'execve',\n",
+       " 'execvp',\n",
+       " 'execvpe',\n",
+       " 'extsep',\n",
+       " 'fchdir',\n",
+       " 'fchmod',\n",
+       " 'fchown',\n",
+       " 'fdatasync',\n",
+       " 'fdopen',\n",
+       " 'fork',\n",
+       " 'forkpty',\n",
+       " 'fpathconf',\n",
+       " 'fsdecode',\n",
+       " 'fsencode',\n",
+       " 'fspath',\n",
+       " 'fstat',\n",
+       " 'fstatvfs',\n",
+       " 'fsync',\n",
+       " 'ftruncate',\n",
+       " 'fwalk',\n",
+       " 'get_blocking',\n",
+       " 'get_exec_path',\n",
+       " 'get_inheritable',\n",
+       " 'get_terminal_size',\n",
+       " 'getcwd',\n",
+       " 'getcwdb',\n",
+       " 'getegid',\n",
+       " 'getenv',\n",
+       " 'getenvb',\n",
+       " 'geteuid',\n",
+       " 'getgid',\n",
+       " 'getgrouplist',\n",
+       " 'getgroups',\n",
+       " 'getloadavg',\n",
+       " 'getlogin',\n",
+       " 'getpgid',\n",
+       " 'getpgrp',\n",
+       " 'getpid',\n",
+       " 'getppid',\n",
+       " 'getpriority',\n",
+       " 'getresgid',\n",
+       " 'getresuid',\n",
+       " 'getsid',\n",
+       " 'getuid',\n",
+       " 'getxattr',\n",
+       " 'initgroups',\n",
+       " 'isatty',\n",
+       " 'kill',\n",
+       " 'killpg',\n",
+       " 'lchown',\n",
+       " 'linesep',\n",
+       " 'link',\n",
+       " 'listdir',\n",
+       " 'listxattr',\n",
+       " 'lockf',\n",
+       " 'lseek',\n",
+       " 'lstat',\n",
+       " 'major',\n",
+       " 'makedev',\n",
+       " 'makedirs',\n",
+       " 'minor',\n",
+       " 'mkdir',\n",
+       " 'mkfifo',\n",
+       " 'mknod',\n",
+       " 'name',\n",
+       " 'nice',\n",
+       " 'open',\n",
+       " 'openpty',\n",
+       " 'pardir',\n",
+       " 'path',\n",
+       " 'pathconf',\n",
+       " 'pathconf_names',\n",
+       " 'pathsep',\n",
+       " 'pipe',\n",
+       " 'pipe2',\n",
+       " 'popen',\n",
+       " 'posix_fadvise',\n",
+       " 'posix_fallocate',\n",
+       " 'posix_spawn',\n",
+       " 'posix_spawnp',\n",
+       " 'pread',\n",
+       " 'preadv',\n",
+       " 'putenv',\n",
+       " 'pwrite',\n",
+       " 'pwritev',\n",
+       " 'read',\n",
+       " 'readlink',\n",
+       " 'readv',\n",
+       " 'register_at_fork',\n",
+       " 'remove',\n",
+       " 'removedirs',\n",
+       " 'removexattr',\n",
+       " 'rename',\n",
+       " 'renames',\n",
+       " 'replace',\n",
+       " 'rmdir',\n",
+       " 'scandir',\n",
+       " 'sched_get_priority_max',\n",
+       " 'sched_get_priority_min',\n",
+       " 'sched_getaffinity',\n",
+       " 'sched_getparam',\n",
+       " 'sched_getscheduler',\n",
+       " 'sched_param',\n",
+       " 'sched_rr_get_interval',\n",
+       " 'sched_setaffinity',\n",
+       " 'sched_setparam',\n",
+       " 'sched_setscheduler',\n",
+       " 'sched_yield',\n",
+       " 'sendfile',\n",
+       " 'sep',\n",
+       " 'set_blocking',\n",
+       " 'set_inheritable',\n",
+       " 'setegid',\n",
+       " 'seteuid',\n",
+       " 'setgid',\n",
+       " 'setgroups',\n",
+       " 'setpgid',\n",
+       " 'setpgrp',\n",
+       " 'setpriority',\n",
+       " 'setregid',\n",
+       " 'setresgid',\n",
+       " 'setresuid',\n",
+       " 'setreuid',\n",
+       " 'setsid',\n",
+       " 'setuid',\n",
+       " 'setxattr',\n",
+       " 'spawnl',\n",
+       " 'spawnle',\n",
+       " 'spawnlp',\n",
+       " 'spawnlpe',\n",
+       " 'spawnv',\n",
+       " 'spawnve',\n",
+       " 'spawnvp',\n",
+       " 'spawnvpe',\n",
+       " 'st',\n",
+       " 'stat',\n",
+       " 'stat_result',\n",
+       " 'statvfs',\n",
+       " 'statvfs_result',\n",
+       " 'strerror',\n",
+       " 'supports_bytes_environ',\n",
+       " 'supports_dir_fd',\n",
+       " 'supports_effective_ids',\n",
+       " 'supports_fd',\n",
+       " 'supports_follow_symlinks',\n",
+       " 'symlink',\n",
+       " 'sync',\n",
+       " 'sys',\n",
+       " 'sysconf',\n",
+       " 'sysconf_names',\n",
+       " 'system',\n",
+       " 'tcgetpgrp',\n",
+       " 'tcsetpgrp',\n",
+       " 'terminal_size',\n",
+       " 'times',\n",
+       " 'times_result',\n",
+       " 'truncate',\n",
+       " 'ttyname',\n",
+       " 'umask',\n",
+       " 'uname',\n",
+       " 'uname_result',\n",
+       " 'unlink',\n",
+       " 'unsetenv',\n",
+       " 'urandom',\n",
+       " 'utime',\n",
+       " 'wait',\n",
+       " 'wait3',\n",
+       " 'wait4',\n",
+       " 'waitid',\n",
+       " 'waitid_result',\n",
+       " 'waitpid',\n",
+       " 'walk',\n",
+       " 'write',\n",
+       " 'writev']"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#importacion de modulos\n",
+    "\n",
+    "from math import pi\n",
+    "import os as te\n",
+    "\n",
+    "print(pi)\n",
+    "print(te.getcwdb())\n",
+    "dir(te)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# gestion de archivo\n",
+    "\n",
+    "#abrir archivo \n",
+    "#arch_test= open(\"/home/jorge/Documents/Ejemplos_pythonNotebook/archivo_ejemplo.txt\")\n",
+    "#print(arch_test)\n",
+    "\n",
+    "#for linea in arch_test:\n",
+    "#    print(linea)\n",
+    "   \n",
+    "#var_read_lines= arch_test.readlines()\n",
+    "#var_read_lines=var_read_lines[0].rstrip()\n",
+    "#print(var_read_lines)\n",
+    "\n",
+    "# apertura para escritura \n",
+    "#arch_test= open(\"/home/jorge/Documents/Ejemplos_pythonNotebook/archivo_ejemplo.txt\",\"w\")\n",
+    "#arch_test.write('Primer archivo')\n",
+    "#arch_test.close()\n",
+    "\n",
+    "#apertura de archivo con posicionamiento\n",
+    "arch_test= open(\"/home/jorge/Documents/Ejemplos_pythonNotebook/archivo_ejemplo.txt\",\"a\")\n",
+    "arch_test.write('\\nlinea 1')\n",
+    "arch_test.write('\\nlinea 2')\n",
+    "arch_test.close()\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
